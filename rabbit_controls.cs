@@ -5,9 +5,9 @@ using UnityEngine;
 public class rabbit_controls : MonoBehaviour {
 
     public int playerSpeed = 10;
-    public bool facingRight = true;
+    private bool facingRight = false;
     public int playerJumpPower = 1250;
-    public float moveX;
+    private float moveX;
     
 
     // update is called  once per frame
@@ -41,6 +41,9 @@ public class rabbit_controls : MonoBehaviour {
         transform.localScale = localScale;
     }
 
-    
+    void jump() {
+        // jump code
+        GetComponent<Rigidbody2D>().AddForce (Vector2.up * playerJumpPower);
+    }
 }
     
